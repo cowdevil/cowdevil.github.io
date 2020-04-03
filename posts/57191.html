@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="配置tor浏览器进入暗网, 晴大大">
+    <meta name="keywords" content="利用bwh主机为自己搭建私有云盘, 晴大大">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>配置tor浏览器进入暗网 | 晴大大</title>
+    <title>利用bwh主机为自己搭建私有云盘 | 晴大大</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">配置tor浏览器进入暗网</h1>
+                    <h1 class="description center-align post-title">利用bwh主机为自己搭建私有云盘</h1>
                 </div>
             </div>
         </div>
@@ -437,8 +437,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-                                <span class="chip bg-color">科学上网</span>
+                            <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/">
+                                <span class="chip bg-color">私有云盘</span>
                             </a>
                         
                     </div>
@@ -449,8 +449,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83/" class="post-category">
-                                搭建环境
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-category">
+                                环境搭建
                             </a>
                         
                     </div>
@@ -462,7 +462,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-01
+                    2020-04-03
                 </div>
                 
 
@@ -479,10 +479,23 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>暗网是隐藏的网络需要配置特殊的浏览器才能访问的，我会在下面放一些暗网的地址。提前声明：不要拿来做违法犯罪的活动。</p>
-<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><p>这时候需要你的电脑或者手机已经能够翻墙了，因为我们国家对tor进行了限制，不翻墙下载不了。<br>暗网下载链接  <a href="https://torproject.org/download/" target="_blank" rel="noopener">点击我</a>。</p>
-<h2 id="进行配置"><a href="#进行配置" class="headerlink" title="进行配置"></a>进行配置</h2><p>里面有手机端，还有电脑端，根据自己的情况进行下载就可以了。配置如下:<br> 因为我们国家对tor进行了限制所以需要我们配置网桥，并且配置自己的代理服务器进行访问暗网。等他弹出duckduckgo浏览器就证明你成功了。</p>
-<h2 id="暗网的一些地址"><a href="#暗网的一些地址" class="headerlink" title="暗网的一些地址"></a>暗网的一些地址</h2><p> 我给大家准备了一些暗网的地址放在了我的网盘中了。  <a href="https://pan.baidu.com/s/128K_4zRdnJFWiw1NIlDeMA" target="_blank" rel="noopener">云盘链接</a><br>提取码：ofsu</p>
+                <p>你可能会有点疑问，百度云难道不好吗？为什么还要自己搭建呢。但你要知道你的百度云盘上面的文件百度是可以查看的，说不定你辛辛苦苦找的资源明天醒过来就看到被和谐了。但私有云盘就不会出现这种问题。这一篇文章我来写搭建一个没有数据库的云盘（没有数据库的相对来说会比较简单），下一篇文章我会再讲一下搭建带有数据库的云盘。</p>
+<h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>我这里用到的环境是centous7，运行在bandwanhost主机上，（就是我们常说的搬瓦工）。在接下来的实操过程中你可能会出错，没有关系，下面有我的QQ，你可以加我好友我们一块讨论。</p>
+<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><p>首先你得查看一下你云主机的内核。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">uname</span> -r <span class="token comment" spellcheck="true">#查看内核的命令</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>内核低于3.10的建议升级一下，升级内核在我上一篇文章有写，这里我就再写一个其他的方法升级内核。</p>
+<h3 id="升级内核"><a href="#升级内核" class="headerlink" title="升级内核"></a>升级内核</h3><pre class="line-numbers language-bash"><code class="language-bash">yum update kernel -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>升级完之后你也可以再运行一下uname -r 命令进行查看。</p>
+<h3 id="下载相应的依赖包"><a href="#下载相应的依赖包" class="headerlink" title="下载相应的依赖包"></a>下载相应的依赖包</h3><pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> -y yum-utils device-mapper-persistent-data lvm2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">yum -config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">yum makecache fast<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">yum -y <span class="token function">install</span> docker-ce<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这时候我们对应的依赖包就已经下载好了。接下来我们启动它们。</p>
+<h3 id="启动对应服务"><a href="#启动对应服务" class="headerlink" title="启动对应服务"></a>启动对应服务</h3><pre class="line-numbers language-bash"><code class="language-bash">systemctl start docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">docker run -d--name owncloud -p 80:80 owncloud <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这一步是要把80端口开开。如果开不开记得关闭防火墙。</p>
+<h4 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h4><pre class="line-numbers language-bash"><code class="language-bash">iptables -F<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这时候基本上就已经完成了，你在浏览器中输入你的ip地址创建一个网盘的管管理员的账号和密码。<br><img src="/posts/57191.htm/20200403094131758.png" alt="1"><br>填写完账号还有密码后你就算是大功告成了。<br><img src="/posts/57191.htm/20200403094346175.png" alt="2"><br>第一次启动可能你点慢。你注意一点。</p>
 
             </div>
             <hr/>
@@ -508,7 +521,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/posts/35680.html">http://yoursite.com/posts/35680.html</a>
+                    <a href="http://yoursite.com/posts/57191.html">http://yoursite.com/posts/57191.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -546,8 +559,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-                                    <span class="chip bg-color">科学上网</span>
+                                <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/">
+                                    <span class="chip bg-color">私有云盘</span>
                                 </a>
                             
                         </div>
@@ -713,9 +726,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://yoursite.com/posts/35680.html';
-        this.page.identifier = '/posts/35680.html';
-        this.page.title = '配置tor浏览器进入暗网';
+        this.page.url = 'http://yoursite.com/posts/57191.html';
+        this.page.identifier = '/posts/57191.html';
+        this.page.title = '利用bwh主机为自己搭建私有云盘';
     };
     let disqus_shortname = '';
 
@@ -1001,9 +1014,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/posts/57191.html">
                     <div class="card-image">
@@ -1021,9 +1035,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1036,6 +1050,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1054,20 +1069,20 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/31440.html">
+                <a href="/posts/35680.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="装载bbr使自己的服务器速度更快">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="配置tor浏览器进入暗网">
                         
-                        <span class="card-title">装载bbr使自己的服务器速度更快</span>
+                        <span class="card-title">配置tor浏览器进入暗网</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            介绍bbr是Google公司的提出的一个开源tcp拥塞控制算法。在Linux4.9内核以上的已经采用，如果内核版本号低于4.9的则需要升级。ssr不经过其他任何优化就可以轻松跑满带宽。我们下面的方法默认升级内核。
-环境我的是在国外bwh与主
+                            介绍暗网是隐藏的网络需要配置特殊的浏览器才能访问的，我会在下面放一些暗网的地址。提前声明：不要拿来做违法犯罪的活动。
+开始搭建这时候需要你的电脑或者手机已经能够翻墙了，因为我们国家对tor进行了限制，不翻墙下载不了。暗网下载链接  点击我。
                         
                     </div>
                     <div class="publish-info">
@@ -1076,8 +1091,12 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            晴大大
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83/" class="post-category">
+                                    搭建环境
+                                </a>
+                            
                             
                         </span>
                     </div>

@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>利用bwh主机为自己搭建私有云盘</title>
+      <link href="/posts/57191.html"/>
+      <url>/posts/57191.html</url>
+      
+        <content type="html"><![CDATA[<p>你可能会有点疑问，百度云难道不好吗？为什么还要自己搭建呢。但你要知道你的百度云盘上面的文件百度是可以查看的，说不定你辛辛苦苦找的资源明天醒过来就看到被和谐了。但私有云盘就不会出现这种问题。这一篇文章我来写搭建一个没有数据库的云盘（没有数据库的相对来说会比较简单），下一篇文章我会再讲一下搭建带有数据库的云盘。</p><h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>我这里用到的环境是centous7，运行在bandwanhost主机上，（就是我们常说的搬瓦工）。在接下来的实操过程中你可能会出错，没有关系，下面有我的QQ，你可以加我好友我们一块讨论。</p><h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><p>首先你得查看一下你云主机的内核。</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">uname</span> -r <span class="token comment" spellcheck="true">#查看内核的命令</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>内核低于3.10的建议升级一下，升级内核在我上一篇文章有写，这里我就再写一个其他的方法升级内核。</p><h3 id="升级内核"><a href="#升级内核" class="headerlink" title="升级内核"></a>升级内核</h3><pre class="line-numbers language-bash"><code class="language-bash">yum update kernel -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>升级完之后你也可以再运行一下uname -r 命令进行查看。</p><h3 id="下载相应的依赖包"><a href="#下载相应的依赖包" class="headerlink" title="下载相应的依赖包"></a>下载相应的依赖包</h3><pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> -y yum-utils device-mapper-persistent-data lvm2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-bash"><code class="language-bash">yum -config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-bash"><code class="language-bash">yum makecache fast<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-bash"><code class="language-bash">yum -y <span class="token function">install</span> docker-ce<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这时候我们对应的依赖包就已经下载好了。接下来我们启动它们。</p><h3 id="启动对应服务"><a href="#启动对应服务" class="headerlink" title="启动对应服务"></a>启动对应服务</h3><pre class="line-numbers language-bash"><code class="language-bash">systemctl start docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-bash"><code class="language-bash">docker run -d--name owncloud -p 80:80 owncloud <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这一步是要把80端口开开。如果开不开记得关闭防火墙。</p><h4 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h4><pre class="line-numbers language-bash"><code class="language-bash">iptables -F<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这时候基本上就已经完成了，你在浏览器中输入你的ip地址创建一个网盘的管管理员的账号和密码。<br><img src="/posts/57191.htm/20200403094131758.png" alt="1"><br>填写完账号还有密码后你就算是大功告成了。<br><img src="/posts/57191.htm/20200403094346175.png" alt="2"><br>第一次启动可能你点慢。你注意一点。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 环境搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 私有云盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>配置tor浏览器进入暗网</title>
       <link href="/posts/35680.html"/>
       <url>/posts/35680.html</url>
