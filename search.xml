@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>搭建shadowsocks科学上网</title>
+      <link href="/posts/26402.html"/>
+      <url>/posts/26402.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>上次记录了一个v2ray的科学上网工具，v2ray是对流量进行了伪装。今天给大家讲一下shadowsocks，这个科学上网工具是对流量进行了加密，从而达到绕过防火墙的目的。</p><h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><p>我所用到的环境还是美国搬瓦工的主机，centos7的操作系统跟前几篇用到的环境是一样的。</p><h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><h3 id="通过脚本安装shadowsocks"><a href="#通过脚本安装shadowsocks" class="headerlink" title="通过脚本安装shadowsocks"></a>通过脚本安装shadowsocks</h3><p>我们直接输入命令：<br>我不知道你的上面有没有wget命令，如果没有也没有关系，安装一下就好了、</p><h4 id="安装wget命令"><a href="#安装wget命令" class="headerlink" title="安装wget命令"></a>安装wget命令</h4><pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token function">wget</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>我们开始通过监本安装</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wget</span> --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowscoks_install/master/shadowsocksR.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>安装完成后我们给他一个课执行的权限》</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chmod</span> +x shadowsocksR.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>提权之后执行：</p><pre class="line-numbers language-bash"><code class="language-bash">./shadowsocksR.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>之后他会让你设置一下端口还有密码，你照着做就好了。还有就是设置协议什么的基本上一路回车就可以了，但是一定要记住你设置信息。<br>一般我们是在shadowsocks里面进行配置，今天我们就在v2里面进行配置。<br><img src="https://pic.downk.cc/item/5e8dfad9504f4bcb047cbb4f.png" alt><br>把我们刚才设置的参数写到这里面。<br><img src="https://pic.downk.cc/item/5e8dfb17504f4bcb047cf970.png" alt><br>我们要记得在参数设置里面把端口改为1080。<br><img src="https://pic.downk.cc/item/5e8dfbcc504f4bcb047da223.png" alt><br>还有最后一步。鼠标右击选择代理模式。<br><img src="https://pic.downk.cc/item/5e8dfc4b504f4bcb047e1d8a.png" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 环境搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 科学上网 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>利用bwh主机为自己搭建私有云盘</title>
       <link href="/posts/57191.html"/>
       <url>/posts/57191.html</url>
