@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>在虚拟机里面安装kali系统</title>
+      <link href="/posts/17655.html"/>
+      <url>/posts/17655.html</url>
+      
+        <content type="html"><![CDATA[<p>刚入坑的小伙伴可能会向往kali这个系统今天我就来给大家演示一下怎么在虚拟中安装kali Linux系统。</p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>kali系统是黑客必备系统，在里面集成了好多渗透相关的工具。可以用来做各种渗透测试。</p><h2 id="用到的工具"><a href="#用到的工具" class="headerlink" title="用到的工具"></a>用到的工具</h2><p>你可能懒得去网上找相对应的工具，kali的ios镜像官网上下载也比较慢。这里我给大家准备好了我的百度云连接。大家直接去下载就好了。<br>虚拟机：<a href="https://pan.baidu.com/s/1f-3w88315bOfmRSRoyAWFg" target="_blank" rel="noopener">地址</a><br>提取码：5zfw   这是百度网盘里面的虚拟机。这里面有好多版本的，还有激活码，直接用很方便的。<br>迅雷里面的kali镜像   <a href="https://sl-m-ssl.xunlei.com/h5/page/download-share/index.html?entry=link&appType=PC&videobtindex=-1&storid=c1wjmxslg61b" target="_blank" rel="noopener">点击我</a>    为什么这里用到迅雷了，以为我准备的是kali2019年的，这个版本比较稳定。迅雷下载的确是比百度云盘快。</p><p>你进去下载就好了。如果搞不定，博客里面有我的QQ欢迎加我好友索要资源，或者一块讨论。</p><h2 id="安装并配置虚拟机"><a href="#安装并配置虚拟机" class="headerlink" title="安装并配置虚拟机"></a>安装并配置虚拟机</h2><p>安装过程相对有点麻烦，我会多附几张图片，让大家便于操作。<br><img src="https://pic.downk.cc/item/5e8f1eff504f4bcb0479188f.png" alt="点击新建虚拟机"><br>这里选择高级安装，就是那个自定义<img src="https://pic.downk.cc/item/5e8f1f7e504f4bcb0479909a.png" alt><br><img src="https://pic.downk.cc/item/5e8f2009504f4bcb047a162b.png" alt><br>在这里呢选择稍后安装操作系统。<br><img src="https://pic.downk.cc/item/5e8f2049504f4bcb047a4e5d.png" alt><br>这里直接回车就好了。<br><img src="https://pic.downk.cc/item/5e8f208f504f4bcb047a8de3.png" alt><br>这里选择安装的位置。<img src="https://pic.downk.cc/item/5e8f20e2504f4bcb047ad88a.png" alt><br>这里选择自己的内核数量我的就一颗物理内核，我的是8核的，所以我就这么选了。<br><img src="https://pic.downk.cc/item/5e8f21a2504f4bcb047b83c6.png" alt><br>这里的内存我给的是4个g，不能太小了。否则会卡，你也可以根据自己的配置继续往上加。<br><img src="https://pic.downk.cc/item/5e8f220b504f4bcb047be5c0.png" alt><br>这里选择使用桥接连接网络，要不然你一会儿可能无法上网。<br><img src="https://pic.downk.cc/item/5e8f245e504f4bcb047e31f8.png" alt><br>一路回车之后，我们来到了这一步，磁盘给100个G就可以了，下面选择拆分成多个文件。<br><img src="https://pic.downk.cc/item/5e8f24f2504f4bcb047ecfa7.png" alt><br>这里我建议自定义一下硬件<br>，选择处理器，把里面的那个虚拟化vt功能打开。<br><img src="https://pic.downk.cc/item/5e8f2596504f4bcb047f750f.png" alt><br>之后我们CD 那一栏选择我们刚才下载好的镜像，点击关闭，再点完成。<br><img src="https://pic.downk.cc/item/5e8f2611504f4bcb047ff2fe.png" alt>之后就是我们的开机启动了。点击那个小三角就可以了。</p><h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><p>上面的虚拟机安装完成之后就是安装我们系统的环节<br>开机后我们就进入到了下面的这个页面。<br><img src="https://pic.downk.cc/item/5e9182e1504f4bcb04981c8b.png" alt><br>我们要选择哪个Graphical install（基于图形界面安装。这时候你的鼠标可能不能用，按上下左右键进行选择回车确定。</p><p>之后就是我们选择语言，简体中文，之后选中国，语言的话你如果英文好，选择英语的也可以。</p><p>再之后就是选择键盘，你可以选择汉语也可以选择美式英语，这个都没关系的。选完之后点击确定，他会自动帮你挂载光盘。<br><img src="https://pic.downk.cc/item/5e918475504f4bcb0499d0eb.png" alt><br>挂载完光盘后，就进入到了这个让你写主机名的界面，主机名自己随便想一个就好了。</p><p><img src="https://pic.downk.cc/item/5e918509504f4bcb049a59fd.png" alt><br>设置密码这个你肯定会。<br><img src="https://pic.downk.cc/item/5e91857d504f4bcb049ac43d.png" alt><br>磁盘分区这里我们选择使用整个磁盘就可以了。</p><p><img src="https://pic.downk.cc/item/5e91860d504f4bcb049b52ec.png" alt>这里选择将所有文件放在同一分区中。<br><img src="https://pic.downk.cc/item/5e918684504f4bcb049bc0d3.png" alt>选择结束分区设定并将修改写入磁盘。</p><p><img src="https://pic.downk.cc/item/5e9186fc504f4bcb049c2ebb.png" alt>回车之后就到了这一步，是否将改动写入磁盘，选择是。<br>之后就进入到了系统安装界面。<br>安装完成后就到了下面这个界面。<br><img src="https://pic.downk.cc/item/5e91878b504f4bcb049ccff7.png" alt><br>他问你是否使用网络镜像，这里呢你可以选择是，也可以选择否，这一点没关系，因为我们安装完成后悔吧源改成国内的源，国内的源速度肯定会快一点。</p><p><img src="https://pic.downk.cc/item/5e918864504f4bcb049db0d8.png" alt>这里不用管它直接点击继续，因为我们配置的是桥接模式，是直接可以上网的。我们没必要再走代理服务器。</p><p>之后他会自动安装apt还有grab引导。等他安装就行。</p><p>然后加到了下面这样。<br><img src="https://pic.downk.cc/item/5e918a91504f4bcb049f8054.png" alt><br>这里选择  是  就好了。<br><img src="https://pic.downk.cc/item/5e918b3b504f4bcb04a02711.png" alt>这里我们选择我们的sda就好了。</p><p><img src="https://pic.downk.cc/item/5e918ba1504f4bcb04a0a27c.png" alt>到这里就算大功告成了，点击继续。</p><p><img src="https://pic.downk.cc/item/5e918c1b504f4bcb04a1270e.png" alt><br>之后输入用户名还有密码，密码就是你刚才设置的那个。是时候进入你的系统了。<br><img src="https://pic.downk.cc/item/5e918c96504f4bcb04a1af6d.png" alt>这就是你新的操作系统的界面了。</p><h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>安装完成之后你会发现你的界面很小，无法放大。这是因为你没有安装VMware tools这个工具，这个工具可以让你放大界面保持与你的物理机的界面一致。另外呢还可以实现在物理机和虚拟机之间的文件拖动。</p><p>这一篇文章的篇幅已经够长了。之后我再抽出来半个小时写一篇安装VMware tools的文章。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 环境搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> kali linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>搭建shadowsocks科学上网</title>
       <link href="/posts/26402.html"/>
       <url>/posts/26402.html</url>
