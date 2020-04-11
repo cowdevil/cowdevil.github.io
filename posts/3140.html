@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="配置tor浏览器进入暗网, 晴大大">
+    <meta name="keywords" content="虚拟机装完kali之后的配置, 晴大大">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>配置tor浏览器进入暗网 | 晴大大</title>
+    <title>虚拟机装完kali之后的配置 | 晴大大</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">配置tor浏览器进入暗网</h1>
+                    <h1 class="description center-align post-title">虚拟机装完kali之后的配置</h1>
                 </div>
             </div>
         </div>
@@ -450,23 +450,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-                                <span class="chip bg-color">科学上网</span>
+                            <a href="/tags/kali-linux/">
+                                <span class="chip bg-color">kali linux</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83/" class="post-category">
-                                搭建环境
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -475,7 +466,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-01
+                    2020-04-11
                 </div>
                 
 
@@ -484,14 +475,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    235
+                    874
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    3 Min
                 </div>
                 
 
@@ -507,10 +498,22 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>暗网是隐藏的网络需要配置特殊的浏览器才能访问的，我会在下面放一些暗网的地址。提前声明：不要拿来做违法犯罪的活动。</p>
-<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><p>这时候需要你的电脑或者手机已经能够翻墙了，因为我们国家对tor进行了限制，不翻墙下载不了。<br>暗网下载链接  <a href="https://torproject.org/download/" target="_blank" rel="noopener">点击我</a>。</p>
-<h2 id="进行配置"><a href="#进行配置" class="headerlink" title="进行配置"></a>进行配置</h2><p>里面有手机端，还有电脑端，根据自己的情况进行下载就可以了。配置如下:<br> 因为我们国家对tor进行了限制所以需要我们配置网桥，并且配置自己的代理服务器进行访问暗网。等他弹出duckduckgo浏览器就证明你成功了。</p>
-<h2 id="暗网的一些地址"><a href="#暗网的一些地址" class="headerlink" title="暗网的一些地址"></a>暗网的一些地址</h2><p> 我给大家准备了一些暗网的地址放在了我的网盘中了。  <a href="https://pan.baidu.com/s/128K_4zRdnJFWiw1NIlDeMA" target="_blank" rel="noopener">云盘链接</a><br>提取码：ofsu</p>
+                <p>我们会进行以下配置：<br>1.配置VMware tools<br>2.把kali的apt源换成国内阿里云的源，实现加速。</p>
+<h2 id="安装VMware-tools"><a href="#安装VMware-tools" class="headerlink" title="安装VMware tools"></a>安装VMware tools</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>上一篇文章中我也有提到关于VMware tools的功能，这里我就在啰嗦一遍。第一呢、VMware tools可以把你虚拟机里面系统的界面放大到你想要的尺寸，甚至全屏，这样看着会舒服些。第二就是可以实现你物理机上面的文件和虚拟机上面的文件实现共享，就是你可以从物理机拖动文件到虚拟机。</p>
+<h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><p>安装的话有两种方法：<br>第一种就是直接用VMware虚拟机自带的光盘，但这个我搞了好几次都有报错，听朋友说自带的那个兼容性也不是很好。<br>第二种方法就是通过终端进行安装。我们这里就直接讲第二种方法了。</p>
+<p>首先我们先对我们的apt命令进行检查，获取软件包的状态。<br>打开终端输入以下命令：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">apt update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>上面的命令完成之后：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">apt <span class="token function">install</span> open-vm-tools-desktop fuse -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这一步的包有点多，需要点时间。</p>
+<p>完成之后重启一下，重启完之后就可以生效了。</p>
+<h2 id="更新kali的源为国内的阿里云的源"><a href="#更新kali的源为国内的阿里云的源" class="headerlink" title="更新kali的源为国内的阿里云的源"></a>更新kali的源为国内的阿里云的源</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>为什么要更新到国内的源呢？就是因为kali自带的apt源是国外的，我们下载软件包的时候回很慢。所以我们配置成国内的源。国内的源有很多，但是还是阿里的源带宽高一点。<br>当然你也可以用清华的源，csdn，中科大的源一会我会在下面放一些源。你自己选就行了。</p>
+<h3 id="开始操作"><a href="#开始操作" class="headerlink" title="开始操作"></a>开始操作</h3><p>别人大佬都是在终端通过vim编辑器进行修改的，对我这个小白来说那个我还不太习惯，我们这里就直接通过图形界面进行修改了。<br><img src="https://pic.downk.cc/item/5e91c338504f4bcb04d84038.png" alt><br>点击位置里面的计算机，你会进入到文件夹目录。<br>找到etc/apt/sources.list 文件鼠标右击选择文本编辑器打开。<img src="https://pic.downk.cc/item/5e91c346504f4bcb04d84f9c.png" alt><br><img src="https://pic.downk.cc/item/5e91c3b9504f4bcb04d8bde1.png" alt><br>我们可以把他原来第八行的源给他删除，也可以像我这样直接在前面加上一个# （这里是#加一个空格，空格不要忘了），之后再下面粘贴上阿里云的源。反正你就跟我搞成一样的保存就可以了。</p>
+<h4 id="检查是否更换成功了"><a href="#检查是否更换成功了" class="headerlink" title="检查是否更换成功了"></a>检查是否更换成功了</h4><p>打开终端输入以下命令：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">apt update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://pic.downk.cc/item/5e91c634504f4bcb04db4b64.png" alt><br>我们可以看到命中得到是我们刚才更换的aliyun的源。</p>
+<h3 id="附上一些国内的源："><a href="#附上一些国内的源：" class="headerlink" title="附上一些国内的源："></a>附上一些国内的源：</h3><p>#中科大：<br>deb <a href="http://mirrors.ustc.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib<br> deb-src <a href="http://mirrors.ustc.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib<br> 阿里云：<br> deb <a href="http://mirrors.aliyun.com/kali" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib<br>deb-src <a href="http://mirrors.aliyun.com/kali" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib<br>  清华大学：<br> deb <a href="http://mirrors.tuna.tsinghua.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free<br> 浙大：<br> deb <a href="http://mirrors.zju.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free<br>deb-src <a href="http://mirrors.zju.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free<br>东软大学：<br>deb <a href="http://mirrors.neusoft.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.neusoft.edu.cn/kali</a> kali-rolling/main non-free contrib<br>deb-src <a href="http://mirrors.neusoft.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.neusoft.edu.cn/kali</a> kali-rolling/main non-free contrib</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>通过我上一篇文章和这一篇两篇文章，主要写了在vm中安装kali，为vm安装VMwaretools，以及修改kali的源为国内阿里云的源，这就把kali的基本配置就算完成了。<br><a href="https://cowdevil.github.io" target="_blank" rel="noopener">我的blog地址</a><br>欢迎前来参观。</p>
 
             </div>
             <hr/>
@@ -536,7 +539,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/posts/35680.html">http://yoursite.com/posts/35680.html</a>
+                    <a href="http://yoursite.com/posts/3140.html">http://yoursite.com/posts/3140.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -574,8 +577,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-                                    <span class="chip bg-color">科学上网</span>
+                                <a href="/tags/kali-linux/">
+                                    <span class="chip bg-color">kali linux</span>
                                 </a>
                             
                         </div>
@@ -741,9 +744,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://yoursite.com/posts/35680.html';
-        this.page.identifier = '/posts/35680.html';
-        this.page.title = '配置tor浏览器进入暗网';
+        this.page.url = 'http://yoursite.com/posts/3140.html';
+        this.page.identifier = '/posts/3140.html';
+        this.page.title = '虚拟机装完kali之后的配置';
     };
     let disqus_shortname = '';
 
@@ -1029,29 +1032,79 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/posts/57191.html">
+                <a href="/posts/3140.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="利用bwh主机为自己搭建私有云盘">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="虚拟机装完kali之后的配置">
                         
-                        <span class="card-title">利用bwh主机为自己搭建私有云盘</span>
+                        <span class="card-title">虚拟机装完kali之后的配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            你可能会有点疑问，百度云难道不好吗？为什么还要自己搭建呢。但你要知道你的百度云盘上面的文件百度是可以查看的，说不定你辛辛苦苦找的资源明天醒过来就看到被和谐了。但私有云盘就不会出现这种问题。这一篇文章我来写搭建一个没有数据库的云盘（没有数据库
+                            我们会进行以下配置：1.配置VMware tools2.把kali的apt源换成国内阿里云的源，实现加速。
+安装VMware tools介绍上一篇文章中我也有提到关于VMware tools的功能，这里我就在啰嗦一遍。第一呢、VMware 
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-03
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            晴大大
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/kali-linux/">
+                        <span class="chip bg-color">kali linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/17655.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="在虚拟机里面安装kali系统">
+                        
+                        <span class="card-title">在虚拟机里面安装kali系统</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            刚入坑的小伙伴可能会向往kali这个系统今天我就来给大家演示一下怎么在虚拟中安装kali Linux系统。
+介绍kali系统是黑客必备系统，在里面集成了好多渗透相关的工具。可以用来做各种渗透测试。
+用到的工具你可能懒得去网上找相对应的工具，
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1067,54 +1120,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/">
-                        <span class="chip bg-color">私有云盘</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/31440.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="装载bbr使自己的服务器速度更快">
-                        
-                        <span class="card-title">装载bbr使自己的服务器速度更快</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            介绍bbr是Google公司的提出的一个开源tcp拥塞控制算法。在Linux4.9内核以上的已经采用，如果内核版本号低于4.9的则需要升级。ssr不经过其他任何优化就可以轻松跑满带宽。我们下面的方法默认升级内核。
-环境我的是在国外bwh与主
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            晴大大
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-                        <span class="chip bg-color">科学上网</span>
+                    <a href="/tags/kali-linux/">
+                        <span class="chip bg-color">kali linux</span>
                     </a>
                     
                 </div>

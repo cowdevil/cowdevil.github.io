@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>虚拟机装完kali之后的配置</title>
+      <link href="/posts/3140.html"/>
+      <url>/posts/3140.html</url>
+      
+        <content type="html"><![CDATA[<p>我们会进行以下配置：<br>1.配置VMware tools<br>2.把kali的apt源换成国内阿里云的源，实现加速。</p><h2 id="安装VMware-tools"><a href="#安装VMware-tools" class="headerlink" title="安装VMware tools"></a>安装VMware tools</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>上一篇文章中我也有提到关于VMware tools的功能，这里我就在啰嗦一遍。第一呢、VMware tools可以把你虚拟机里面系统的界面放大到你想要的尺寸，甚至全屏，这样看着会舒服些。第二就是可以实现你物理机上面的文件和虚拟机上面的文件实现共享，就是你可以从物理机拖动文件到虚拟机。</p><h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><p>安装的话有两种方法：<br>第一种就是直接用VMware虚拟机自带的光盘，但这个我搞了好几次都有报错，听朋友说自带的那个兼容性也不是很好。<br>第二种方法就是通过终端进行安装。我们这里就直接讲第二种方法了。</p><p>首先我们先对我们的apt命令进行检查，获取软件包的状态。<br>打开终端输入以下命令：</p><pre class="line-numbers language-bash"><code class="language-bash">apt update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>上面的命令完成之后：</p><pre class="line-numbers language-bash"><code class="language-bash">apt <span class="token function">install</span> open-vm-tools-desktop fuse -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这一步的包有点多，需要点时间。</p><p>完成之后重启一下，重启完之后就可以生效了。</p><h2 id="更新kali的源为国内的阿里云的源"><a href="#更新kali的源为国内的阿里云的源" class="headerlink" title="更新kali的源为国内的阿里云的源"></a>更新kali的源为国内的阿里云的源</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>为什么要更新到国内的源呢？就是因为kali自带的apt源是国外的，我们下载软件包的时候回很慢。所以我们配置成国内的源。国内的源有很多，但是还是阿里的源带宽高一点。<br>当然你也可以用清华的源，csdn，中科大的源一会我会在下面放一些源。你自己选就行了。</p><h3 id="开始操作"><a href="#开始操作" class="headerlink" title="开始操作"></a>开始操作</h3><p>别人大佬都是在终端通过vim编辑器进行修改的，对我这个小白来说那个我还不太习惯，我们这里就直接通过图形界面进行修改了。<br><img src="https://pic.downk.cc/item/5e91c338504f4bcb04d84038.png" alt><br>点击位置里面的计算机，你会进入到文件夹目录。<br>找到etc/apt/sources.list 文件鼠标右击选择文本编辑器打开。<img src="https://pic.downk.cc/item/5e91c346504f4bcb04d84f9c.png" alt><br><img src="https://pic.downk.cc/item/5e91c3b9504f4bcb04d8bde1.png" alt><br>我们可以把他原来第八行的源给他删除，也可以像我这样直接在前面加上一个# （这里是#加一个空格，空格不要忘了），之后再下面粘贴上阿里云的源。反正你就跟我搞成一样的保存就可以了。</p><h4 id="检查是否更换成功了"><a href="#检查是否更换成功了" class="headerlink" title="检查是否更换成功了"></a>检查是否更换成功了</h4><p>打开终端输入以下命令：</p><pre class="line-numbers language-bash"><code class="language-bash">apt update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://pic.downk.cc/item/5e91c634504f4bcb04db4b64.png" alt><br>我们可以看到命中得到是我们刚才更换的aliyun的源。</p><h3 id="附上一些国内的源："><a href="#附上一些国内的源：" class="headerlink" title="附上一些国内的源："></a>附上一些国内的源：</h3><p>#中科大：<br>deb <a href="http://mirrors.ustc.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib<br> deb-src <a href="http://mirrors.ustc.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib<br> 阿里云：<br> deb <a href="http://mirrors.aliyun.com/kali" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib<br>deb-src <a href="http://mirrors.aliyun.com/kali" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib<br>  清华大学：<br> deb <a href="http://mirrors.tuna.tsinghua.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free<br> 浙大：<br> deb <a href="http://mirrors.zju.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free<br>deb-src <a href="http://mirrors.zju.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free<br>东软大学：<br>deb <a href="http://mirrors.neusoft.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.neusoft.edu.cn/kali</a> kali-rolling/main non-free contrib<br>deb-src <a href="http://mirrors.neusoft.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.neusoft.edu.cn/kali</a> kali-rolling/main non-free contrib</p><h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>通过我上一篇文章和这一篇两篇文章，主要写了在vm中安装kali，为vm安装VMwaretools，以及修改kali的源为国内阿里云的源，这就把kali的基本配置就算完成了。<br><a href="https://cowdevil.github.io" target="_blank" rel="noopener">我的blog地址</a><br>欢迎前来参观。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> kali linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>在虚拟机里面安装kali系统</title>
       <link href="/posts/17655.html"/>
       <url>/posts/17655.html</url>
