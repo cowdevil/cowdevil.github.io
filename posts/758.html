@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="装载bbr使自己的服务器速度更快, 晴大大">
+    <meta name="keywords" content="搭建私有云盘（配置数据库）, 晴大大">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>装载bbr使自己的服务器速度更快 | 晴大大</title>
+    <title>搭建私有云盘（配置数据库） | 晴大大</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">装载bbr使自己的服务器速度更快</h1>
+                    <h1 class="description center-align post-title">搭建私有云盘（配置数据库）</h1>
                 </div>
             </div>
         </div>
@@ -450,14 +450,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-                                <span class="chip bg-color">科学上网</span>
+                            <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/">
+                                <span class="chip bg-color">私有云盘</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-category">
+                                环境搭建
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -466,7 +475,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-01
+                    2020-04-13
                 </div>
                 
 
@@ -475,14 +484,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    225
+                    801
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    3 Min
                 </div>
                 
 
@@ -498,12 +507,43 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>bbr是Google公司的提出的一个开源tcp拥塞控制算法。在Linux4.9内核以上的已经采用，如果内核版本号低于4.9的则需要升级。ssr不经过其他任何优化就可以轻松跑满带宽。我们下面的方法默认升级内核。</p>
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>我的是在国外bwh与主机上面运行的，系统是centos7。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">uname</span> -r <span class="token comment" spellcheck="true"># 查看内核版本号</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wget</span> -N --no-checck-certificate https://github.com/teddysun/across/raw/master/bbr.sh <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> +x bbr.sh <span class="token operator">&amp;&amp;</span> bash.sh <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>我稍微解释一下上面那一条命令，&amp;&amp;表示执行完上一条命令执行下一条。chmod +x 表示加一个可执行的权限，bash直接调用。</p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>升级内核那一步可能会比较慢，你多等一等，安装完成之后记得reboot重启生效，不要忘了这一步哦。</p>
+                <p>今天来给大家讲一下怎么搭建私有云盘，前面那一片文章是没有上传数据库的今天我给大家演示一下自己上传数据库的。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>我所用到的环境是bwh（搬瓦工）的主机，里面的是centos7操作系统。其他系统的安装方法几乎差不多。</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>安装他所用到的环境</p>
+<pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> –y epel-release yum-utils unzip curl weget bash-completion policycoreutils-python mlocate <span class="token function">bzip2</span> lrzsz vim<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>之后安装数据库服务</p>
+<pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> –y httpd mariadb-server mariadb sqlite<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装PHP72环境</p>
+<pre class="line-numbers language-bash"><code class="language-bash">yum -y <span class="token function">install</span> php72w php72w-cli php72w-fpm php72w-common php72w-devel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> –y php72w php72w-cli php72w-common php72w-curl php72w-gd php72w-mbstring php72w-mysqlnd php72w-process php72w-xml php72w-zip php72w-opcache php72w-pecl-apcu php72w-intl php72w-pecl-redis<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>到这里我们的lamp环境就算搭建完成了。</p>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><pre class="line-numbers language-bash"><code class="language-bash">systemctl <span class="token function">enable</span> php-fpm.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">systemctl start php-fpm.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="初始化lamp环境"><a href="#初始化lamp环境" class="headerlink" title="初始化lamp环境"></a>初始化lamp环境</h2><p>所谓初始化就是把该开启的服务给他开启一下。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">systemctl start httpd <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这个时候你在你的浏览器中输入自己的ip地址，访问一下看看。一般情况下是可以访问的，如果不能访问的话，清空防火墙就行了。</p>
+<p>清空防火墙：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">iptables -F<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>给你的数据库创建密码：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">mysqladmin –u root password <span class="token string">"123456"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>登陆一下看看：</p>
+<pre><code>mysql –u root –p123456</code></pre><p>如果弹出welcome的话就证明成功了。<br>我们先不管他/q或者exit先退出来。</p>
+<h2 id="上传源代码"><a href="#上传源代码" class="headerlink" title="上传源代码"></a>上传源代码</h2><p>这个源代码，这个源码地址我给大家写一下：<br><a href="https://pan.baidu.com/s/1zTb0IE7uoFvQUaIHlhuvDQ" target="_blank" rel="noopener">链接</a><br>提取码：s6xe<br>大家直接去下载就好了。下载完之后rz上传到自己的服务器上，当然你也可以用其他的方式进行上传，只要把它能搞到你的云主机上就行。<br>上传之后进行解压：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">unzip nextcloud-15.0.5.zip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>解压之后我们需要把里面的文件全部copy到自己的根目录下：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cp</span> –r nextcloud/* /var/www/html/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>我们还要创建一个根目录用来存放内容：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mkdir</span> /var/www/html/data  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>接下来给他配置权限</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chown</span> –R apache:apache /var/www/html/data/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chown</span> –R apache:apache /var/www/html/ <span class="token comment" spellcheck="true"># 同时也指定一下根</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>之后我们为他创建一个数据库：</p>
+<pre><code>mysql –u root –p123456 # 登陆进去</code></pre><pre class="line-numbers language-bash"><code class="language-bash">create database nextcloud <span class="token comment" spellcheck="true"># 创建一个数据库</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">exit</span> <span class="token comment" spellcheck="true"># 退出</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="通过web界面安装nextcloud"><a href="#通过web界面安装nextcloud" class="headerlink" title="通过web界面安装nextcloud"></a>通过web界面安装nextcloud</h3><p>在浏览器中输入：<br><a href="http://xx.xx.xx.xx/index.php" target="_blank" rel="noopener">http://xx.xx.xx.xx/index.php</a> ( 中间的xxx是你自己云主机的ip。)你也可以直接输入你的ip。都一样</p>
+<h4 id="创建管理员账号密码："><a href="#创建管理员账号密码：" class="headerlink" title="创建管理员账号密码："></a>创建管理员账号密码：</h4><p>创建管理员账号：admin<br>创建管理员密码：（这里写你要创建的密码）<br>选择数据库一定要写在 /var/www/html/data目录下<br>选择mycql 数据库账号密码<br>数据库名写刚才创建的那个nextcloud的库<br>点击 安装完成<br>之后等他安装就行了。<br>不大一会儿就会弹出一个：给您的数据一个安全的家<br>这样就代表你成功了。</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>说实话本人搭建好之后没用几天就删除了，我觉得他有点慢，也可能是我的带宽比较小。不过搭建一下练练技术还是可以有的。</p>
 
             </div>
             <hr/>
@@ -529,7 +569,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/posts/31440.html">http://yoursite.com/posts/31440.html</a>
+                    <a href="http://yoursite.com/posts/758.html">http://yoursite.com/posts/758.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -567,8 +607,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-                                    <span class="chip bg-color">科学上网</span>
+                                <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/">
+                                    <span class="chip bg-color">私有云盘</span>
                                 </a>
                             
                         </div>
@@ -734,9 +774,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://yoursite.com/posts/31440.html';
-        this.page.identifier = '/posts/31440.html';
-        this.page.title = '装载bbr使自己的服务器速度更快';
+        this.page.url = 'http://yoursite.com/posts/758.html';
+        this.page.identifier = '/posts/758.html';
+        this.page.title = '搭建私有云盘（配置数据库）';
     };
     let disqus_shortname = '';
 
@@ -1022,47 +1062,50 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/posts/35680.html">
+                <a href="/posts/758.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="配置tor浏览器进入暗网">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="搭建私有云盘（配置数据库）">
                         
-                        <span class="card-title">配置tor浏览器进入暗网</span>
+                        <span class="card-title">搭建私有云盘（配置数据库）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            介绍暗网是隐藏的网络需要配置特殊的浏览器才能访问的，我会在下面放一些暗网的地址。提前声明：不要拿来做违法犯罪的活动。
-开始搭建这时候需要你的电脑或者手机已经能够翻墙了，因为我们国家对tor进行了限制，不翻墙下载不了。暗网下载链接  点击我。
+                            今天来给大家讲一下怎么搭建私有云盘，前面那一片文章是没有上传数据库的今天我给大家演示一下自己上传数据库的。
+介绍我所用到的环境是bwh（搬瓦工）的主机，里面的是centos7操作系统。其他系统的安装方法几乎差不多。
+安装环境安装他所用到的环
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83/" class="post-category">
-                                    搭建环境
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-category">
+                                    环境搭建
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-                        <span class="chip bg-color">科学上网</span>
+                    <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/">
+                        <span class="chip bg-color">私有云盘</span>
                     </a>
                     
                 </div>
@@ -1076,25 +1119,25 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/15960.html">
+                <a href="/posts/3140.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="在bwh主机上配置v2ray服务器">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="虚拟机装完kali之后的配置">
                         
-                        <span class="card-title">在bwh主机上配置v2ray服务器</span>
+                        <span class="card-title">虚拟机装完kali之后的配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            我买的云主机是bwh，系统是centous7，想让自己的Windows能够翻墙访问外网，这个教程基本上就可以了。现在普遍的翻墙基本上就两种，一种是对自己的流量进行加密从而绕过防火墙。第二种就是我们接下来要用的，伪装流量。
-安装v2ray脚本
+                            我们会进行以下配置：1.配置VMware tools2.把kali的apt源换成国内阿里云的源，实现加速。
+安装VMware tools介绍上一篇文章中我也有提到关于VMware tools的功能，这里我就在啰嗦一遍。第一呢、VMware 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-11
                             </span>
                         <span class="publish-author">
                             
@@ -1107,8 +1150,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-                        <span class="chip bg-color">科学上网</span>
+                    <a href="/tags/kali-linux/">
+                        <span class="chip bg-color">kali linux</span>
                     </a>
                     
                 </div>
