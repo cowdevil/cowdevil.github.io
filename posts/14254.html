@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="在bwh主机上配置v2ray服务器, 晴大大">
+    <meta name="keywords" content="搭建Discuz论坛, 晴大大">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>在bwh主机上配置v2ray服务器 | 晴大大</title>
+    <title>搭建Discuz论坛 | 晴大大</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">在bwh主机上配置v2ray服务器</h1>
+                    <h1 class="description center-align post-title">搭建Discuz论坛</h1>
                 </div>
             </div>
         </div>
@@ -450,8 +450,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-                                <span class="chip bg-color">科学上网</span>
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+                                <span class="chip bg-color">环境搭建</span>
                             </a>
                         
                     </div>
@@ -466,7 +466,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-03-31
+                    2020-04-14
                 </div>
                 
 
@@ -475,14 +475,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    283
+                    685
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -498,14 +498,33 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>我买的云主机是bwh，系统是centous7，想让自己的Windows能够翻墙访问外网，这个教程基本上就可以了。现在普遍的翻墙基本上就两种，一种是对自己的流量进行加密从而绕过防火墙。第二种就是我们接下来要用的，伪装流量。</p>
-<h2 id="安装v2ray脚本"><a href="#安装v2ray脚本" class="headerlink" title="安装v2ray脚本"></a>安装v2ray脚本</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">bash</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span>curl -s -L https://git.io/v2ray.sh<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="选择协议类型"><a href="#选择协议类型" class="headerlink" title="选择协议类型"></a>选择协议类型</h3><p>默认是tcp协议，也可以选择6，mkcp协议。tcp协议较为稳定，mkcp协议较快，根据自己的情况来选择。</p>
-<h3 id="配置代理服务器的端口，密码"><a href="#配置代理服务器的端口，密码" class="headerlink" title="配置代理服务器的端口，密码"></a>配置代理服务器的端口，密码</h3><p>这一步基本上一路回车就可以了。</p>
-<h2 id="在Windows上面安装v2ray客户端"><a href="#在Windows上面安装v2ray客户端" class="headerlink" title="在Windows上面安装v2ray客户端"></a>在Windows上面安装v2ray客户端</h2><p>这里我给大家哦准备好了<a href="https://www.lanzous.com/i9cxv3i" target="_blank" rel="noopener">地址</a>,进去下载就好了。</p>
-<h3 id="在xshell中导出URL"><a href="#在xshell中导出URL" class="headerlink" title="在xshell中导出URL"></a>在xshell中导出URL</h3><pre class="line-numbers language-bash"><code class="language-bash">v2ray url <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>他会弹出URL，这时候复制下来，导入到Windows客户端。</p>
-<h3 id="导入URL"><a href="#导入URL" class="headerlink" title="导入URL"></a>导入URL</h3><p>在Windows上安装好v2ray后双击，你会在右下角看到他，这时候双击点开，在右上角有一个服务器菜单点进去选择从剪贴板批量导入URL。就可以上网了。</p>
+                <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>今天搭建的discuz论坛是一个带有漏洞的论坛。因为个人需要做一些渗透测试，所以我搭建的论坛是带有漏洞的。如果你是自己用不想要漏洞的话你可以换一个模板上传。这个模板我会把链接放在这篇文章中，你直接去下载就好了。</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>我搭建的环境一直还没有变化。还是美国搬瓦工（bwh）的主机，centos7的操作系统。</p>
+<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><p>之前搭建过我文章里面有讲搭建云盘的文章，如果那个你搭建过的话，搭建这个就是小意思了。<br>我们来五分钟解决战斗。</p>
+<p>首先安装lamp环境：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">yum -y <span class="token function">install</span> httpd mariadb-server mariadb php php-mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>之后启动安装的那两项服务：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">systemctl start httpd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这样我们的阿帕奇还有数据库就都启动了。</p>
+<p>之后给我们的数据库配上账号还有密码：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">mysqladmin -u root password <span class="token string">"123456"</span> <span class="token comment" spellcheck="true"># 账户名root，密码123456</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果你不确定是否搭建好了，你可以登陆进去看一下。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">mysql -u root -p123456 <span class="token comment" spellcheck="true"># 登陆进去</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果出现welcome 的话就证明你前面做的是对的。<br>我们exit退出先不管它。</p>
+<h2 id="上传源代码配置"><a href="#上传源代码配置" class="headerlink" title="上传源代码配置"></a>上传源代码配置</h2><p>你可以用rz命令进行上传。<br><a href="https://pan.baidu.com/s/1Q-mKf4YGwA4h0kfrhQItAw" target="_blank" rel="noopener">链接</a><br>提取码：4hhw<br>上传完之后是个zip的压缩包，我们运行unzip进行解压。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">unzip Discuz_X2_SC_UTF8.zip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>解压完成之后我们需要把一些文件移动到网站的根目录下面。</p>
+<pre><code>mv upload/* /var/www/html/</code></pre><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mv</span> utility/ /var/www/html/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这样我们就把这些文件移动到了/var/www/html/根目录下面了。我们接下来进到这个目录下面给他配置一些权限。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> /var/www/html/ <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chown</span> -R apache:apache uc_server/ data/ config/ uc_client/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chown</span> apache:apache utility/convert/data<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">iptables -F <span class="token comment" spellcheck="true"># 清空防火墙</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>到这里基本上就算搭建完成了。</p>
+<h2 id="通过web界面安装论坛"><a href="#通过web界面安装论坛" class="headerlink" title="通过web界面安装论坛"></a>通过web界面安装论坛</h2><p>我们直接在浏览器中输入自己的ip地址。<br>我的不知道怎么回事用360浏览器打不开，但是用Google可以打开。可能是因为我的云主机在美国，我的360没有翻墙的原因。<br><img src="https://pic.downk.cc/item/5e955ef4c2a9a83be5a0bb71.png" alt><br>看到这个界面的话就很nice，点击<strong>我同意</strong>。</p>
+<p><img src="https://pic.downk.cc/item/5e955f42c2a9a83be5a0e82d.png" alt>点击_下一步_。<br><img src="https://pic.downk.cc/item/5e955f9cc2a9a83be5a13bd5.png" alt><br>这里选择全新安装。<br><img src="https://pic.downk.cc/item/5e95601fc2a9a83be5a1a663.png" alt><br>这里其他的不要动，只需要改动我们我画出来的地方就可以了。<br>数据库的密码：就是你刚刚设置的那个密码。</p>
+<p>下面就是创建管理员的密码。你想一个管理员的密码就好了。<br>再之后点击_下一步_他就会自动安装了。<br>安装完之后就可以进入了。</p>
 
             </div>
             <hr/>
@@ -531,7 +550,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/posts/15960.html">http://yoursite.com/posts/15960.html</a>
+                    <a href="http://yoursite.com/posts/14254.html">http://yoursite.com/posts/14254.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -569,8 +588,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-                                    <span class="chip bg-color">科学上网</span>
+                                <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+                                    <span class="chip bg-color">环境搭建</span>
                                 </a>
                             
                         </div>
@@ -736,9 +755,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://yoursite.com/posts/15960.html';
-        this.page.identifier = '/posts/15960.html';
-        this.page.title = '在bwh主机上配置v2ray服务器';
+        this.page.url = 'http://yoursite.com/posts/14254.html';
+        this.page.identifier = '/posts/14254.html';
+        this.page.title = '搭建Discuz论坛';
     };
     let disqus_shortname = '';
 
@@ -1024,30 +1043,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/posts/31440.html">
+                <a href="/posts/14254.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="装载bbr使自己的服务器速度更快">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="搭建Discuz论坛">
                         
-                        <span class="card-title">装载bbr使自己的服务器速度更快</span>
+                        <span class="card-title">搭建Discuz论坛</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            介绍bbr是Google公司的提出的一个开源tcp拥塞控制算法。在Linux4.9内核以上的已经采用，如果内核版本号低于4.9的则需要升级。ssr不经过其他任何优化就可以轻松跑满带宽。我们下面的方法默认升级内核。
-环境我的是在国外bwh与主
+                            介绍今天搭建的discuz论坛是一个带有漏洞的论坛。因为个人需要做一些渗透测试，所以我搭建的论坛是带有漏洞的。如果你是自己用不想要漏洞的话你可以换一个模板上传。这个模板我会把链接放在这篇文章中，你直接去下载就好了。
+环境我搭建的环境一直还没
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1056,11 +1076,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
-                        <span class="chip bg-color">科学上网</span>
+                    <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+                        <span class="chip bg-color">环境搭建</span>
                     </a>
                     
                 </div>
@@ -1074,29 +1095,35 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/16107.html">
+                <a href="/posts/758.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="搭建私有云盘（配置数据库）">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">搭建私有云盘（配置数据库）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            今天来给大家讲一下怎么搭建私有云盘，前面那一片文章是没有上传数据库的今天我给大家演示一下自己上传数据库的。
+介绍我所用到的环境是bwh（搬瓦工）的主机，里面的是centos7操作系统。其他系统的安装方法几乎差不多。
+安装环境安装他所用到的环
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-13
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            晴大大
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-category">
+                                    环境搭建
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1104,8 +1131,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9D%82%E6%96%87/">
-                        <span class="chip bg-color">杂文</span>
+                    <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/">
+                        <span class="chip bg-color">私有云盘</span>
                     </a>
                     
                 </div>

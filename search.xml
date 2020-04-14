@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>搭建Discuz论坛</title>
+      <link href="/posts/14254.html"/>
+      <url>/posts/14254.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>今天搭建的discuz论坛是一个带有漏洞的论坛。因为个人需要做一些渗透测试，所以我搭建的论坛是带有漏洞的。如果你是自己用不想要漏洞的话你可以换一个模板上传。这个模板我会把链接放在这篇文章中，你直接去下载就好了。</p><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>我搭建的环境一直还没有变化。还是美国搬瓦工（bwh）的主机，centos7的操作系统。</p><h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><p>之前搭建过我文章里面有讲搭建云盘的文章，如果那个你搭建过的话，搭建这个就是小意思了。<br>我们来五分钟解决战斗。</p><p>首先安装lamp环境：</p><pre class="line-numbers language-bash"><code class="language-bash">yum -y <span class="token function">install</span> httpd mariadb-server mariadb php php-mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>之后启动安装的那两项服务：</p><pre class="line-numbers language-bash"><code class="language-bash">systemctl start httpd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-bash"><code class="language-bash">systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这样我们的阿帕奇还有数据库就都启动了。</p><p>之后给我们的数据库配上账号还有密码：</p><pre class="line-numbers language-bash"><code class="language-bash">mysqladmin -u root password <span class="token string">"123456"</span> <span class="token comment" spellcheck="true"># 账户名root，密码123456</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>如果你不确定是否搭建好了，你可以登陆进去看一下。</p><pre class="line-numbers language-bash"><code class="language-bash">mysql -u root -p123456 <span class="token comment" spellcheck="true"># 登陆进去</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>如果出现welcome 的话就证明你前面做的是对的。<br>我们exit退出先不管它。</p><h2 id="上传源代码配置"><a href="#上传源代码配置" class="headerlink" title="上传源代码配置"></a>上传源代码配置</h2><p>你可以用rz命令进行上传。<br><a href="https://pan.baidu.com/s/1Q-mKf4YGwA4h0kfrhQItAw" target="_blank" rel="noopener">链接</a><br>提取码：4hhw<br>上传完之后是个zip的压缩包，我们运行unzip进行解压。</p><pre class="line-numbers language-bash"><code class="language-bash">unzip Discuz_X2_SC_UTF8.zip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>解压完成之后我们需要把一些文件移动到网站的根目录下面。</p><pre><code>mv upload/* /var/www/html/</code></pre><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mv</span> utility/ /var/www/html/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这样我们就把这些文件移动到了/var/www/html/根目录下面了。我们接下来进到这个目录下面给他配置一些权限。</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> /var/www/html/ <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chown</span> -R apache:apache uc_server/ data/ config/ uc_client/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chown</span> apache:apache utility/convert/data<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-bash"><code class="language-bash">iptables -F <span class="token comment" spellcheck="true"># 清空防火墙</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>到这里基本上就算搭建完成了。</p><h2 id="通过web界面安装论坛"><a href="#通过web界面安装论坛" class="headerlink" title="通过web界面安装论坛"></a>通过web界面安装论坛</h2><p>我们直接在浏览器中输入自己的ip地址。<br>我的不知道怎么回事用360浏览器打不开，但是用Google可以打开。可能是因为我的云主机在美国，我的360没有翻墙的原因。<br><img src="https://pic.downk.cc/item/5e955ef4c2a9a83be5a0bb71.png" alt><br>看到这个界面的话就很nice，点击<strong>我同意</strong>。</p><p><img src="https://pic.downk.cc/item/5e955f42c2a9a83be5a0e82d.png" alt>点击_下一步_。<br><img src="https://pic.downk.cc/item/5e955f9cc2a9a83be5a13bd5.png" alt><br>这里选择全新安装。<br><img src="https://pic.downk.cc/item/5e95601fc2a9a83be5a1a663.png" alt><br>这里其他的不要动，只需要改动我们我画出来的地方就可以了。<br>数据库的密码：就是你刚刚设置的那个密码。</p><p>下面就是创建管理员的密码。你想一个管理员的密码就好了。<br>再之后点击_下一步_他就会自动安装了。<br>安装完之后就可以进入了。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 环境搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>搭建私有云盘（配置数据库）</title>
       <link href="/posts/758.html"/>
       <url>/posts/758.html</url>
