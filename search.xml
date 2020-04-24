@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>安装脚本插件 刷网课</title>
+      <link href="/posts/16905.html"/>
+      <url>/posts/16905.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装脚本管理器并实现刷网课"><a href="#安装脚本管理器并实现刷网课" class="headerlink" title="安装脚本管理器并实现刷网课"></a>安装脚本管理器并实现刷网课</h2><p>  如果你是大学生，你一定被网课支配过。我们今天就利用脚本来为我们刷网课（不要拿去谋私利）。</p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>   原理就是利用脚本来来进行刷课，所以我们要先安装一个脚本管理器Tampermonkey，然后我们在里面安装脚本。这里我就用火狐浏览器进行举例。</p><h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><p>   首先我们进入 [链接] (<a href="https://greasyfork.org/)这个网站。" target="_blank" rel="noopener">https://greasyfork.org/)这个网站。</a><br>  <img src="https://pic.downk.cc/item/5ea2e12ac2a9a83be5b77a83.png" alt><br>  我们选择一个自己浏览器对应的脚本管理器安装，如果你是360、QQ浏览器选择微软的就行（Microsoft edge)想下载哪一个直接点击就行。<img src="https://pic.downk.cc/item/5ea2e20ac2a9a83be5b8aaa7.png" alt>点击 <strong>添加到Firefox</strong>。然后他就会自己帮你安装了。之后他会弹出问你是否添加，你点击添加就好了。<br>安装好之后你会在你的浏览器右上角看到他：</p><p>之后我们访问  <a href="https://greasyfork.org/zh-CN/scripts" target="_blank" rel="noopener">链接</a> 这个网址里面进行下载脚本。<img src="https://pic.downk.cc/item/5ea2e487c2a9a83be5bc717a.png" alt>我们可以看到有各种各样的脚本，还可以进行搜索，我来下载一个刷u校园的脚本。<br><img src="https://pic.downk.cc/item/5ea2e50fc2a9a83be5bd2054.png" alt>我们搜出来的结果。</p><p><img src="https://pic.downk.cc/item/5ea2e555c2a9a83be5bd7416.png" alt>点击<strong>安装此脚本</strong>。<br><img src="https://pic.downk.cc/item/5ea2e589c2a9a83be5bdb795.png" alt>点击安装。<br><img src="https://pic.downk.cc/item/5ea2e5b8c2a9a83be5bdf855.png" alt>在我们刚才安装的脚本管理器中也可以查看和管理我们安装的脚本。<br>到这里我们就算完工了，然后在浏览器打开你的u校园进入你要刷的课程，脚本就可以自动执行了。</p><h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>  脚本什么的资源你可以在里面直接下载，各种各样的脚本都有。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 脚本插件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>搭建Discuz论坛</title>
       <link href="/posts/14254.html"/>
       <url>/posts/14254.html</url>
