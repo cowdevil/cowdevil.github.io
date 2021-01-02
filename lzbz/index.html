@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 WebGL粒子爆炸背景动画 - 代码库</title>
+    <link rel="stylesheet" href="css/dmaku.css">
+</head>
+<!--/************************************************************
+ *																*
+ * 						      代码库							*
+ *                        www.dmaku.com							*
+ *       		  努力创建完善、持续更新插件以及模板			*
+ * 																*
+**************************************************************-->
+<body>  
+<canvas id="c"></canvas>
+<script id="shader-fs" type="x-shader/x-fragment">
+				#ifdef GL_ES
+				  precision highp float;
+				  #endif
+    		void main(void) {
+    		 gl_FragColor = vec4(0.2, 0.3, 0.4, 1.0);
+    		}
+		</script>
+
+  <script id="shader-vs" type="x-shader/x-vertex">
+    	attribute vec3 vertexPosition;
+
+  	uniform mat4 modelViewMatrix;
+  	uniform mat4 perspectiveMatrix;
+
+   	void main(void) {
+  		gl_Position = perspectiveMatrix * modelViewMatrix * vec4(  vertexPosition, 1.0);
+  	}
+  </script>
+  
+    <script src="js/dmaku.js"></script>
+
+</body>
+</html>
